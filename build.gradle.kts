@@ -28,13 +28,14 @@ tasks {
 
         testLogging {
             lifecycle {
-                events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
+                events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent
+                    .SKIPPED)
                 exceptionFormat = TestExceptionFormat.FULL
 
                 showExceptions = true
                 showCauses = true
-                showStackTraces = true
-                showStandardStreams = true
+                showStackTraces = false
+                showStandardStreams = false
             }
             info.events = lifecycle.events
             info.exceptionFormat = lifecycle.exceptionFormat
@@ -57,8 +58,8 @@ tasks {
             }
 
             override fun afterSuite(suite: TestDescriptor, result: TestResult) {
-                if (suite.parent == null) { // root suite
-                    logger.lifecycle("----")
+                if (suite.parent == null) {
+                    logger.lifecycle("################ Summary::Start ################")
                     logger.lifecycle("Test result: ${result.resultType}")
                     logger.lifecycle(
                         "Test summary: ${result.testCount} tests, " +
@@ -67,6 +68,7 @@ tasks {
                                 "${result.skippedTestCount} skipped")
                     failedTests.takeIf { it.isNotEmpty() }?.prefixedSummary("\tFailed Tests")
                     skippedTests.takeIf { it.isNotEmpty() }?.prefixedSummary("\tSkipped Tests:")
+                    logger.lifecycle("################ Summary::End ##################")
                 }
             }
 

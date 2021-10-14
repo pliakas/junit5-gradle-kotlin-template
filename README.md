@@ -7,3 +7,6 @@ and code and tests written in Java & Kotlin and provides a better console report
 [Gradle's native JUnit Platform support]: https://docs.gradle.org/current/userguide/java_testing.html#using_junit5
 
 Run `./gradlew test` to execute all tests.
+
+You can find details about the project at this [post](https://pliakas.github.
+io/2021/10/08/junit5-readable-reports-with-gradle/).
