@@ -38,7 +38,7 @@ class CalculatorTest {
         }
 
         @Test
-        @DisplayName("Failing test on puporse (for demo reasons")
+        @DisplayName("Failing test on purpose (for demo reasons")
         fun simpleFailedAddition() {
             val calculator = Calculator();
             assertEquals(3, calculator.add(2, 3), "2 + 3 should equal to 5")
