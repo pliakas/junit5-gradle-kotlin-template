@@ -8,5 +8,4 @@ and code and tests written in Java & Kotlin and provides a better console report
 
 Run `./gradlew test` to execute all tests.
 
-You can find details about the project at this [post](https://pliakas.github.
-io/2021/10/08/junit5-readable-reports-with-gradle/).
+You can find details about the project at this [post](https://pliakas.github.io/2021/10/08/junit5-readable-reports-with-gradle/).
